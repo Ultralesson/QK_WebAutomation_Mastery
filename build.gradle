@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.ultralesson.webautomation'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //selenium
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.19.1'
+
+    //lombok
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+
+    //Github
+    implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
+
+
+    //test implementation
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    //lombok
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+
+    //testng
+    testImplementation group: 'org.testng', name: 'testng', version: '7.10.1'
+
+}
+
+test {
+    useTestNG()
+}
